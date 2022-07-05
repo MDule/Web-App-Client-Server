@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="shortcut icon" href="imgs/python-icon-256x256.webp" type="image/x-icon">
+    <script type="text/javascript" src="static/functions.js"></script>
+    <title>Python University</title>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div>
+            <h1 id="yyt">Python University</h1>
+        </div>
+
+        <div id="header">
+            <img id="header-img" src="imgs/python-logo-749x178.png" alt="Python">
+        </div> <!-- end header-img-->
+
+        <div id="menu">
+            <ul>
+                <li id="show-search" onclick="search()">Search by index number</li>
+                <li id="show-new-student" onclick="new_student()">Enter new student</li>
+            </ul>
+        </div>
+
+        <div id="search">
+            <hr style="margin: 0;">
+            <p>Search student database by their index number. Index numbers are formatted by year of enrollment and the
+                order of submitting papers i.e. "2022-001" or "2022-010." Returns student's id, name, surname, index
+                number and GPA.
+            </p>
+            <label for="search">Enter index number:</label>
+            <input type="search" name="search" id="search-input" placeholder="2022-001">
+            <button id="search-btn" onclick="search_db()">Search</button>
+            <hr>
+            <p>Results:</p>
+            <p id="search-results"></p>
+        </div>
+
+
+
+        <div id="new-student">
+            <hr style="margin: 0;">
+            <p>Enroll new student into Python University. Use the form bellow to enter data about student like name,
+                surname, index
+                number and GPA.
+            </p>
+            <hr>
+            <form action="" method="post" onsubmit="return false">
+                <label for="name">Enter student's name: </label>
+                <input type="text" name="name" id="name" required placeholder="John">
+                <br>
+                <label for="surname">Enter student's surname: </label>
+                <input type="text" name="surname" id="surname" required placeholder="Doe">
+                <br>
+                <label for="index-num">Enter student's index number: </label>
+                <input type="text" name="index-num" id="index-num" required placeholder="2022-011">
+                <br>
+                <label for="gpa">Enter student's GPA: </label>
+                <input type="text" name="gpa" id="gpa" required placeholder="10.0">
+                <br>
+                <br>
+                <button onclick="new_student_db()">Submit</button>
+                <hr>
+                <p id="new_student_results">Results:</p>
+                <br>
+            </form>
+        </div> <!-- end new-student-->
+
+        <footer>
+            <hr>
+            <p>
+                Copyright 2022 @ Python University
+            </p>
+        </footer>
+
+    </div> <!-- end wrapper-->
+
+
+
+
+    <script type="text/javascript" src="static/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $("#search").hide();
+        $("#new-student").hide();
+
+        function search() {
+            $("#search").show();
+            $("#new-student").hide();
+        };
+
+        function new_student() {
+            $("#search").hide();
+            $("#new-student").show();
+        }
+    </script>
+
+</body>
+
+</html>
